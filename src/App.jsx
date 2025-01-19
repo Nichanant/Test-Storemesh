@@ -11,12 +11,11 @@ function App() {
 
   return (
     <div className='bg-blue-200'>
-        <Navbar />
-        <div className='md:flex'>
+      <Navbar />
+      <div className='md:flex'>
         <Filter />
         <ShowItem />
-        </div>
-  
+      </div>
     </div>
   )
 }
