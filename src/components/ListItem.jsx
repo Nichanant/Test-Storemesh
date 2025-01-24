@@ -1,20 +1,16 @@
-import React, { useState, useEffect } from 'react'
-
-
+import React from 'react'
+import Item from './Item';
 
 function ListItem(props) {
-  const { id, title, price, src } = props
+    const todoList = props.todoList;
 
-  return (
-    <div className='flex justify-between bg-white py-5 my-2 w-full'>
-      <div className='container flex flex-col items-start justify-center'>
-        <p className='mx-10 text-2xl'> <span className='bg-blue-200 px-0.5 rounded-md'>ID :</span> {id}</p>
-        <p className='mx-10 text-lg'><span  className='bg-blue-200 px-0.5 rounded-md'>Product :</span> {title}</p>
-        <p className='mx-10 text-lg'><span  className='bg-blue-200 px-0.5 rounded-md'>Price :</span> ${price}</p>
-      </div>
-      <img src={src} alt="pic Product" width={200} className='px-10'/>
-    </div>
-  )
+    return (
+        <div>
+            {todoList.map((e) => (
+                <Item key={e.id} task={e.task} id={e.id} isFinished={e.isFinished} deleteTask={props.deleteTask}/>
+            ))}
+        </div>
+    )
 }
 
 export default ListItem
